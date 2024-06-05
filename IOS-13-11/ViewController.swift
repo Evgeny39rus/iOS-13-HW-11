@@ -11,6 +11,12 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var Login: UILabel!
     
+    @IBOutlet weak var usernameTextField:UITextField!
+    
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    @IBOutlet weak var loginButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -32,15 +38,14 @@ class ViewController: UIViewController {
                Login.textAlignment = .center
                Login.backgroundColor = .white // Фоновый цвет для лучшей видимости
                Login.translatesAutoresizingMaskIntoConstraints = false
-//        Login.text = "Login"
-//        Login.textAlignment = .center
-//        Login.backgroundColor = .white // Фоновый цвет для лучшей видимости
-//        Login.translatesAutoresizingMaskIntoConstraints = false
-//        
-//        Login.layer.borderColor = UIColor.black.cgColor // Цвет обводки
-//        Login.layer.borderWidth = 2.0 // Толщина обводки
-//        Login.layer.cornerRadius = 10.0 // Радиус закругления углов (опционально)
-//        Login.layer.masksToBounds = true // Обязателен для закругления углов
+        
+               usernameTextField.placeholder = "Login"
+               usernameTextField.borderStyle = .roundedRect
+               passwordTextField.placeholder = "Password"
+               passwordTextField.borderStyle = .roundedRect
+               passwordTextField.isSecureTextEntry = true
+        
+
     }
 
  
