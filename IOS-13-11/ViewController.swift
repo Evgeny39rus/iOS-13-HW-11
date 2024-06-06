@@ -25,30 +25,31 @@ class ViewController: UIViewController {
        
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-//        
         
-        // Настройка текста с обводкой
-               let text = "Login"
-               let strokeTextAttributes: [NSAttributedString.Key: Any] = [
-                   .strokeColor: UIColor.black, // Цвет обводки
-                   .foregroundColor: UIColor.gray, // Цвет текста
-                   .strokeWidth: -1.0 // Толщина обводки (отрицательное значение для внутренней обводки)
-               ]
+        
+        let text = "Login"  // Настройка текста с обводкой
+        let strokeTextAttributes: [NSAttributedString.Key: Any] = [
+           .strokeColor: UIColor.black, // Цвет обводки
+           .foregroundColor: UIColor.gray, // Цвет текста
+           .strokeWidth: -1.0 // Толщина обводки (отрицательное значение для внутренней обводки)
+        ]
         let attributedText = NSAttributedString(string: text, attributes: strokeTextAttributes)
                
                // Установка атрибутированного текста в UILabel
-               Login.attributedText = attributedText
-               
-               // Дополнительная настройка UILabel
-               Login.textAlignment = .center
-               Login.backgroundColor = .white // Фоновый цвет для лучшей видимости
-               Login.translatesAutoresizingMaskIntoConstraints = false
-        
-               usernameTextField.placeholder = "Login"
-               usernameTextField.borderStyle = .roundedRect
-               passwordTextField.placeholder = "Password"
-               passwordTextField.borderStyle = .roundedRect
-               passwordTextField.isSecureTextEntry = true
+        Login.attributedText = attributedText
+
+        // Дополнительная настройка UILabel
+        Login.textAlignment = .center
+        Login.backgroundColor = .white // Фоновый цвет для лучшей видимости
+        Login.translatesAutoresizingMaskIntoConstraints = false
+
+        usernameTextField.placeholder = "Login"
+        usernameTextField.borderStyle = .roundedRect
+        usernameTextField.setLeftIcon(UIImage.iconsFace)
+        passwordTextField.placeholder = "Password"
+        passwordTextField.borderStyle = .roundedRect
+        passwordTextField.isSecureTextEntry = true
+        passwordTextField.setLeftIcon(UIImage.iconPass)
     }
 }
 
