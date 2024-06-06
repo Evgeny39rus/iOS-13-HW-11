@@ -7,6 +7,8 @@
 
 import UIKit
 
+
+                                            
 class ViewController: UIViewController {
     
     @IBOutlet weak var Login: UILabel!
@@ -17,7 +19,10 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var loginButton: UIButton!
     
+
+    
     override func viewDidLoad() {
+       
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 //        
@@ -44,11 +49,17 @@ class ViewController: UIViewController {
                passwordTextField.placeholder = "Password"
                passwordTextField.borderStyle = .roundedRect
                passwordTextField.isSecureTextEntry = true
-        
-
     }
-
- 
-    
 }
 
+
+extension UITextField {
+    func setLeftIcon(_ image: UIImage) {
+        let iconView = UIImageView(frame: CGRect(x: 10, y: 5, width: 20, height: 20))
+        iconView.image = image
+        let iconContainerView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+        iconContainerView.addSubview(iconView)
+        leftView = iconContainerView
+        leftViewMode = .always
+    }
+}
