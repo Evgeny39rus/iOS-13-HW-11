@@ -24,25 +24,25 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
        
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+// Do any additional setup after loading the view.
         
         
         let text = "Login"  // Настройка текста с обводкой
         let strokeTextAttributes: [NSAttributedString.Key: Any] = [
            .strokeColor: UIColor.black, // Цвет обводки
-           .foregroundColor: UIColor.gray, // Цвет текста
            .strokeWidth: -1.0 // Толщина обводки (отрицательное значение для внутренней обводки)
         ]
         let attributedText = NSAttributedString(string: text, attributes: strokeTextAttributes)
                
-               // Установка атрибутированного текста в UILabel
+// Установка атрибутированного текста в UILabel
         Login.attributedText = attributedText
 
-        // Дополнительная настройка UILabel
+// Дополнительная настройка UILabel
         Login.textAlignment = .center
-        Login.backgroundColor = .white // Фоновый цвет для лучшей видимости
         Login.translatesAutoresizingMaskIntoConstraints = false
-
+        Login.backgroundColor = Login.backgroundColor
+        
+        
         usernameTextField.placeholder = "Login"
         usernameTextField.borderStyle = .roundedRect
         usernameTextField.setLeftIcon(UIImage.iconsFace)
@@ -52,8 +52,19 @@ class ViewController: UIViewController {
         passwordTextField.setLeftIcon(UIImage.iconPass)
     }
 }
+// Добавление тени к кнопке
+extension UIButton {
+    func applyShadow() {
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOpacity = 0.3
+        layer.shadowOffset = .zero
+        layer.shadowRadius = 10
+        layer.shouldRasterize = true
+        layer.rasterizationScale = UIScreen.main.scale
+    }
+}
 
-
+// Добавление иконки в TextField
 extension UITextField {
     func setLeftIcon(_ image: UIImage) {
         let iconView = UIImageView(frame: CGRect(x: 10, y: 5, width: 20, height: 20))
