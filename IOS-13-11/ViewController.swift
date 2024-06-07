@@ -19,25 +19,24 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var loginButton: UIButton!
     
-
     
     override func viewDidLoad() {
        
         super.viewDidLoad()
-// Do any additional setup after loading the view.
+        // Do any additional setup after loading the view.
         
-        
-        let text = "Login"  // Настройка текста с обводкой
+        // Настройка текста с обводкой
+        let text = "Login"
         let strokeTextAttributes: [NSAttributedString.Key: Any] = [
            .strokeColor: UIColor.black, // Цвет обводки
            .strokeWidth: -1.0 // Толщина обводки (отрицательное значение для внутренней обводки)
         ]
         let attributedText = NSAttributedString(string: text, attributes: strokeTextAttributes)
                
-// Установка атрибутированного текста в UILabel
+        // Установка атрибутированного текста в UILabel
         Login.attributedText = attributedText
 
-// Дополнительная настройка UILabel
+        // Дополнительная настройка UILabel
         Login.textAlignment = .center
         Login.translatesAutoresizingMaskIntoConstraints = false
         Login.backgroundColor = Login.backgroundColor
